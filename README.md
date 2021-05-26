@@ -6,7 +6,7 @@ Demo of the tutorial on how to craft a fullscreen SVG crosshair mouse cursor wit
 
 [Article on Codrops](https://tympanus.net/codrops/?p=54713)
 
-[Demo](http://tympanus.net/Development/CrosshairDistortion/)
+[Demo](https://tympanus.net/Tutorials/CrosshairDistortion/)
 
 
 ## Installation
