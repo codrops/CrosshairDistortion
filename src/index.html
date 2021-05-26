@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Crosshair Distortion | Codrops</title>
+		<meta name="description" content="Demo of the tutorial on how to craft a fullscreen SVG crosshair mouse cursor with a special distortion effect on hover." />
+		<meta name="keywords" content="mouse cursor, crosshair, hover, svg, distortion, menu, javascript" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="stylesheet" href="https://use.typekit.net/xvw0qbb.css">
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+	</head>
+	<body class="demo-1">
+		<main>
+			<div class="frame">
+				<div class="frame__title-wrap">
+					<h1 class="frame__title">Crosshair Distortion</h1>
+				</div>
+				<nav class="frame__links">
+					<a href="http://tympanus.net/Development/3DLettersMenuHover/">Previous demo</a>
+					<a href="https://tympanus.net/codrops/?p=54713">Article</a>
+					<a href="https://github.com/codrops/CrosshairDistortion/">GitHub</a>
+				</nav>
+				<nav class="frame__demos">
+					<a href="https://tympanus.net/codrops/category/playground/" class="frame__demo">More demos</a>
+				</nav>
+			</div>
+			<nav class="menu">
+				<a href="#content-1" class="menu__item">
+					<span data-splitting class="menu__item-title">Maputo</span>
+					<span data-splitting class="menu__item-sub">Nights</span>
+				</a>
+				<a href="#content-1" class="menu__item">
+					<span data-splitting class="menu__item-title">Gaborone</span>
+					<span data-splitting class="menu__item-sub">Vibes</span>
+				</a>
+				<a href="#content-1" class="menu__item">
+					<span data-splitting class="menu__item-title">Kinshasa</span>
+					<span data-splitting class="menu__item-sub">Walks</span>
+				</a>
+			</nav>
+		</main>
+		<div class="cursor">
+			<svg class="cursor__line cursor__line--horizontal" viewBox="0 0 200 20" preserveAspectRatio="none">
+				<defs>
+					<filter id="filter-noise-x" x="-50%" y="-50%" width="200%" height="200%" 
+					filterUnits="objectBoundingBox">
+						<feTurbulence type="fractalNoise" baseFrequency="0" numOctaves="1" result="warp" />
+						<feOffset dx="-30" result="warpOffset" />
+						<feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="30" in="SourceGraphic" in2="warpOffset" />
+					</filter>
+				</defs>
+				<line class="cursor__line-element" x1="0" y1="10" x2="200" y2="10" shape-rendering="crispEdges" vector-effect="non-scaling-stroke" />
+			</svg>
+			<svg class="cursor__line cursor__line--vertical" viewBox="0 0 20 200" preserveAspectRatio="none">
+				<defs>
+					<filter id="filter-noise-y" x="-50%" y="-50%" width="200%" height="200%" 
+					filterUnits="objectBoundingBox">
+						<feTurbulence type="fractalNoise" baseFrequency="0" numOctaves="1" result="warp" />
+						<feOffset dy="-30" result="warpOffset" />
+						<feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="30" in="SourceGraphic" in2="warpOffset" />
+					</filter>
+				</defs>
+				<line class="cursor__line-element" x1="10" y1="0" x2="10" y2="200" shape-rendering="crispEdges" vector-effect="non-scaling-stroke" />
+			</svg>
+		</div>
+		<script src="js/index.js"></script>
+	</body>
+</html>
